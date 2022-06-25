@@ -21,18 +21,25 @@ This information is extremely useful to an attacker since they now know a potent
 
 ### *Enter the IP address for demo.testfire.net into Domain Dossier and answer the following questions based on the results:*
 
-*Where is the company located:* Sunnyvale, CA, 94085, USA
+*Where is the company located:* 
 
-*What is the NetRange IP address:* 65.61.137.64 - 65.61.137.127
+Sunnyvale, CA, 94085, USA
 
-*What is the company they use to store their infrastructure:* Rackspace Backbone Engineering. 
+*What is the NetRange IP address:*
 
-*What is the IP address of the DNS server:* 65.61.137.117
+65.61.137.64 - 65.61.137.127
+
+*What is the company they use to store their infrastructure:* 
+
+Rackspace Backbone Engineering. 
+
+*What is the IP address of the DNS server:* 6
+
+5.61.137.117
 
 See screenshot:
 
 ![Domain Dossier Entry demo.testfire.net](https://github.com/BrendanT2248/Week-16-Homework-Penetration-Testing-1/blob/main/Images/dd1.PNG)
-
 
 ## Step 3: Shodan
 
@@ -58,15 +65,28 @@ https://www.shodan.io/host/65.61.137.117
 
 *Command for Zenmap to run a service scan against the Metasploitable machine:*
 
+
+
 *Bonus command to output results into a new text file named zenmapscan.txt:*
+
+
 
 *Zenmap vulnerability script command:*
 
+
+
 *Once you have identified this vulnerability, answer the following questions for your client:*
+
+
 
 *What is the vulnerability:*
 
+
+
 *Why is it dangerous:*
 
+
+
 *What mitigation strategies can you recommendations for the client to protect their server:*
+
 

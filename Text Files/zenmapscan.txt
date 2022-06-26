@@ -1,0 +1,26 @@
+# Nmap 7.80 scan initiated Sat Jun 25 20:25:47 2022 as: nmap -T4 -F -oN zenmapscan.txt -oX /tmp/zenmap-MEaF1_.xml 192.168.0.10
+Nmap scan report for 192.168.0.10
+Host is up (0.056s latency).
+Not shown: 82 closed ports
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+513/tcp  open  login
+514/tcp  open  shell
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+5432/tcp open  postgresql
+5900/tcp open  vnc
+6000/tcp open  X11
+8009/tcp open  ajp13
+MAC Address: 00:15:5D:00:04:03 (Microsoft)
+
+# Nmap done at Sat Jun 25 20:25:47 2022 -- 1 IP address (1 host up) scanned in 0.33 seconds

@@ -2,8 +2,8 @@
 
 ## Step 1: Google Dorking
 
-### *Using Google, can you identify who the Chief Executive Officer of Altoro Mutual is:
-By navigating to the website demo.testfire.net and doing some basic reconnaissance we are able to find out who the CEO of Altoro Mutal is.*
+### *Using Google, can you identify who the Chief Executive Officer of Altoro Mutual is:*
+By navigating to the website demo.testfire.net and doing some basic reconnaissance we are able to find out who the CEO of Altoro Mutal is.
 
 By following the links Inside Altora Mutual > About Us > Executives & Management Team > 
 
@@ -43,7 +43,7 @@ See screenshot:
 
 ## Step 3: Shodan
 
-### What open ports and running services did Shodan find: 
+### *What open ports and running services did Shodan find:*
 
 Ports 80 (HTTP) and 443 (HTTPS) were open. See below screenshot:
 
@@ -54,6 +54,8 @@ https://www.shodan.io/host/65.61.137.117
 ## Step 4: Recon-ng
 
 ### - *Install the Recon module xssed.*
+  - Search for the module `xssed` by entering the command `marketplace search xssed`
+  - 
 ### - *Set the source to demo.testfire.net.*
 ### - *Run the module.*
 

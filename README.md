@@ -134,12 +134,31 @@ We have succesfully performed XSS on this website by entering a script in as a q
 
 *What is the vulnerability:*
 
+From the below screenshots, we can see Zenmap was able to enumerate the vulnerable services for ports 139 and 445.
 
+![Zenmap Vulnerable 1](https://github.com/BrendanT2248/Week-16-Homework-Penetration-Testing-1/blob/main/Images/zenmap6.PNG)
+
+![Zenmap Vulnerable 2](https://github.com/BrendanT2248/Week-16-Homework-Penetration-Testing-1/blob/main/Images/zenmap7.PNG)
 
 *Why is it dangerous:*
 
+The VSFTPD 2.3.4 backdoor attack is dangerous and can be applied on port 21 via malicous code. If executed successfully, this opens up a backdoor on port 6200. 
 
+The backdoor payload of this exploit is done using a ':)' (or smiley face) in the FTP username, a TCP callback shell is attempted. This bypasses any broadcast notification and any administrative authentication. This results on a backdoor opening on port 6200 and running as root. 
+
+This backdoor exploit was introduced between the 30th of June 2011 and the 1st of July 2011. It was removed on the 3rd of July 2011. 
+
+The SMB is the Windows Server Message Block (SMB) and this is what is used to access organisations network share files. The SMB protocls is used by PC's for file and printer sharing, along with remote access services. 
+
+Running `NetShareEnumAll` will work against Windows and if an attacker exploits this they could gain access to any open network shares. After a list of shares is scanned and found, the script attempts to connect to each of them anonmymously. 
+
+SMB vulnerabilities have the potential for malicousl payloads to be spread laterally throughout connected systems and other open shares. 
 
 *What mitigation strategies can you recommendations for the client to protect their server:*
 
+By ensuring operating system's and software applications have the latest security patches installed. For both these vulnerabilities:
 
+- The vsFPTD 2.3.4 patch was released on July 3, 2011 with the patch constantly monitered and updated.
+- The SMB (CVE-2017-0145) patch was released by Microsoft MS17-010 , and the SAMBA (CVE-2017-0145) patches were released by Red Had for Linux RHSA-2017:1390
+
+As well as this, ensuring admin authentication is set up where required. 

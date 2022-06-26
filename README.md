@@ -84,27 +84,53 @@ We can see 1 new vulnerability found from the image above. In the 'category' we 
     
 ![XSS Executed](https://github.com/BrendanT2248/Week-16-Homework-Penetration-Testing-1/blob/main/Images/xssed5.PNG)
 
-We can see the XSS has been successfully. We have succesfully performed XSS on this website by entering a script in as a query.
+We have succesfully performed XSS on this website by entering a script in as a query.
 
 ## Step 5: Zenmap
 
 ### *Your client has asked that you help identify any vulnerabilities with their file-sharing server. Using the Metasploitable machine to act as your client's server, complete the following:* 
 
 *Command for Zenmap to run a service scan against the Metasploitable machine:*
+- Open both the Kali Linux machine and the Metasploitable machine. Log in with credentials. 
+- Open Terminal on Kali machine
+- Confirm Metasploitable machine's IP address. Enter `ifconfig` when signed in. IP Address is `192.168.0.10`:
 
+![Metasploitable IP](https://github.com/BrendanT2248/Week-16-Homework-Penetration-Testing-1/blob/main/Images/zenmap1.PNG)
 
+- From `Terminal` open `zenmap` by entering `zenmap`
+- Enter target IP Address `192.168.0.10`
+- Use a standard nmap command - `nmap -T4 -F 192.168.0.10`
+- Click `Scan` to get results:
+
+![zenmap scan 1](https://github.com/BrendanT2248/Week-16-Homework-Penetration-Testing-1/blob/main/Images/zenmap2.PNG)
 
 *Bonus command to output results into a new text file named zenmapscan.txt:*
+- To save the results of this zenmap scan to zenmapscan.txt, add the following on the command line when performing the scan: `-oN zenmapscan.txt`. The whole command should be `nmap -T4 -F -oN zenmapscan.txt 192.168.0.10`:
 
+![zenmap scan report](https://github.com/BrendanT2248/Week-16-Homework-Penetration-Testing-1/blob/main/Images/zenmap3.PNG)
 
+- File is saved in home directory folder of current user:
+
+![zenmap report](https://github.com/BrendanT2248/Week-16-Homework-Penetration-Testing-1/blob/main/Images/zenmap4.PNG)
+
+[Zenmap Scan Report of Metasploitable Machine](https://github.com/BrendanT2248/Week-16-Homework-Penetration-Testing-1/blob/main/Text%20Files/zenmapscan.txt)
 
 *Zenmap vulnerability script command:*
+- There are two scripts that are in Zenmap that can be used for vulnerbility scanning associated with the services running on ports 139 and 445. 
+- From the 'Profile' tab, create a new profile (or can edit a selected one)
+- Name the profile
+- Select the 'scripting' tab to view scripts
+- Check the boxes for the `ftp-vsftpd-backdoor` and `smb-enum-shares`. These two scripts are designed to test for file transfer and network share access vulnerabilities. 
+- Click 'save changes' 
+- Command should look like `nmap -T4 -F --script ftp-vsftpd-backdoor,smb-enum-shares 192.168.0.10`:
+  - `-T4`: Set the timing template
+  - `-F`: Fast mode, scans fewer ports than default scan but is faster. 
+  - `ftp-vsftpd-backdoor`: This script looks to exploit the backdoor by using the `id` command by default, but this can be changed by use of this exploit. 
+  - `smb-enum-shares`: Attempts to list the netwwork shares using the `srvsvc`. Finding open shares is useful because if any are exposed, it is a good place for an attacker to drop malicious files. Running this will determine if the network share requires administrative access. 
 
+![Custom Zenmap Scan of Metasploitable](https://github.com/BrendanT2248/Week-16-Homework-Penetration-Testing-1/blob/main/Images/zenmap5.PNG)
 
-
-*Once you have identified this vulnerability, answer the following questions for your client:*
-
-
+### *Once you have identified this vulnerability, answer the following questions for your client:*
 
 *What is the vulnerability:*
 

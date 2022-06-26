@@ -53,13 +53,38 @@ https://www.shodan.io/host/65.61.137.117
 
 ## Step 4: Recon-ng
 
-### - *Install the Recon module xssed.*
-  - Search for the module `xssed` by entering the command `marketplace search xssed`
-  - 
-### - *Set the source to demo.testfire.net.*
-### - *Run the module.*
+### *Install the Recon `module xssed.`*
+  - Search for the module `xssed` by entering `marketplace search xssed`
+  - Install the module `xssed` by entering `marketplace install recon/domains-vulnerabilities/xssed`
+  - Load the module `xssed` by entering `modules load recon/domains-vulnerableilities/xssed`
+
+![xssed install](https://github.com/BrendanT2248/Week-16-Homework-Penetration-Testing-1/blob/main/Images/xssed1.PNG)
+
+### *Set the source to `demo.testfire.net.`*
+  - Check the information currently being held by xssed. We want to change this. Run `info`
+  - To change the `SOURCE` from `default` to `demo.testfire.net` enter command `options set SOURCE demo.testfire.net`
+
+![Set the source](https://github.com/BrendanT2248/Week-16-Homework-Penetration-Testing-1/blob/main/Images/xssed2.PNG)
+
+### *Run the module.*
+  - Run the module by entering `run`
+
+![xssed run](https://github.com/BrendanT2248/Week-16-Homework-Penetration-Testing-1/blob/main/Images/xssed3.PNG)
+
+We can see 1 new vulnerability found from the image above. In the 'category' we can see XSS.
 
 ### *Is Altoro Mutual vulnerable to XSS:*
+
+  - Yes, as it was shown as the picked up vulnerability from xssed. By entering a script query into the search bar on the website, we are able to test this vulnerability.
+  - Enter <script>alert("WARNING")</script> on the search bar on the website to test this. 
+    - Enter the query into the search bar:
+
+![XSS 1](https://github.com/BrendanT2248/Week-16-Homework-Penetration-Testing-1/blob/main/Images/xssed4.PNG)
+    - Hit `Go` to execute the query:
+    
+![XSS Executed](https://github.com/BrendanT2248/Week-16-Homework-Penetration-Testing-1/blob/main/Images/xssed5.PNG)
+
+We can see the XSS has been successfully. We have succesfully performed XSS on this website by entering a script in as a query.
 
 ## Step 5: Zenmap
 
